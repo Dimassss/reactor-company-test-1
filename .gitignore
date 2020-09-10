@@ -1,0 +1,8 @@
+front/node_modules
+front/package-lock.json
+
+back/vendor
+back/tmp
+back/composer.lock
+back/src/view/assets
+back/errors.log

@@ -1,0 +1,13 @@
+{
+    "name": "dimas/back",
+    "type": "project",
+    "require": {
+        "bcosca/fatfree-core": "^3.7"
+    },
+    "authors": [
+        {
+            "name": "Dimas Karpus",
+            "email": "dimas.karpusss@gmail.com"
+        }
+    ]
+}

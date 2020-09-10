@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <base href="/" target="_blank">
+    <meta charset="utf-8">
+    <title>Error Page</title>
+    <link rel="stylesheet" href="/src/view/assets/styles/error.css">
+    <script type="text/javascript" src="/src/view/assets/scripts/error.bundle.js"></script>
+  </head>
+  <body>
+    <strong><a href="/">Redirect to the main page</a></strong><br><br>
+    <code>
+      <var>Code:</var> {{ @ERROR.code }}<br>
+      <var>Status:</var> {{ @ERROR.status }}<br>
+      <var>Text:</var> {{ @ERROR.text }}<br>
+      <var>Trace:</var> {{ @ERROR.trace }}<br>
+      <var>Level:</var> {{ @ERROR.level }}<br>
+    </code>
+  </body>
+</html>
