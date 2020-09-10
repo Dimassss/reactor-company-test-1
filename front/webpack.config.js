@@ -10,6 +10,7 @@ module.exports = {
     devtool:'source-map',
     entry: {
         error: './src/scripts/react/pages/error-pages/error/page.tsx',
+        home: './src/scripts/react/pages/main/home/page.tsx',
     },
     output: {
         path: path.resolve(__dirname, distFolder),

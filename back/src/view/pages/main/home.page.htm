@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <base href="/" target="_self">
     <meta charset="utf-8">
     <title>Home Page</title>
+    <link rel="stylesheet" href="/src/view/assets/styles/home.css">
+    <script type="text/javascript" src="/src/view/assets/scripts/home.bundle.js" defer></script>
   </head>
   <body>
-    Hi World!
+    <include href="/components/navbar/navbar.htm"/>
+
+    <main class="container">
+      <div class="row">
+        <h1 class='col-12'>URL Minifier!</h1>
+        <div class="col-12">
+          <p>Minify your url!</a>
+            Description of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis nisl in enim porttitor fermentum. Vivamus ante lectus, ultrices sit amet massa vitae, vestibulum semper odio.
+            <br>
+            <a href="/min" class="btn btn-outline-success btn-lg col-12 col-md-5 btn-min">Minify your url!</a>
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
