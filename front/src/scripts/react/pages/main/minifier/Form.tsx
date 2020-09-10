@@ -22,7 +22,16 @@ export class Form extends React.Component<Props, State>{
   }
 
   onSubmitHandler(){
-
+    new UrlServer().minifyUrl({
+      url: this.state.url,
+      date: this.state.date
+    })
+    .then((minCode: number) => {
+      window.location.href = '/info/'+minCode;
+    }).catch(err => {
+      console.log(err);
+      alert('Your url want created due to the server error')
+    });
   }
 
   onUrlChangeHandler(url: string){
@@ -39,7 +48,8 @@ export class Form extends React.Component<Props, State>{
   canSend(): boolean{
     return (
       this.state.urlExists &&
-      !(this.state.minCode > -1)
+      !(this.state.minCode > -1) &&
+      this.state.date !== ''
     );
   }
 
@@ -84,6 +94,10 @@ export class Form extends React.Component<Props, State>{
                 ?{disabled:true}
                 :{}
               )}
+              value={this.state.date}
+              onChange={e => {
+                this.setState({date: e.currentTarget.value});
+              }}
             />
          </div>
        </div>

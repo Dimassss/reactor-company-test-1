@@ -3,7 +3,9 @@ import * as ReactDOM from 'react-dom';
 import React from 'react';
 import { UrlServer } from '../../../../server/UrlServer';
 
-type Props = {};
+type Props = {
+  urlInfo: any
+};
 type State = {
   info: any,
   url: string
@@ -13,10 +15,16 @@ class InfoBar extends React.Component<Props, State>{
   constructor(props: Props){
     super(props);
 
-    this.state = {
+    let state = {
       info: '',
       url: ''
     };
+    if(props.urlInfo){
+        state.info = urlInfo.url;
+        state.info = urlInfo;
+    }
+
+    this.state = state;
   }
 
   searchInfo(){
@@ -58,4 +66,8 @@ class InfoBar extends React.Component<Props, State>{
   }
 }
 
-ReactDOM.render((<InfoBar/>), document.getElementById('app'));
+const urlInfoStr = document.body.dataset.urlInfo;
+const urlInfo = urlInfoStr ? JSON.parse(atob(document.body.dataset.urlInfo)) : false;
+ReactDOM.render((<InfoBar urlInfo={urlInfo}/>), document.getElementById('app'));
+
+console.log(urlInfo);
