@@ -11,6 +11,8 @@ module.exports = {
     entry: {
         error: './src/scripts/react/pages/error-pages/error/page.tsx',
         home: './src/scripts/react/pages/main/home/page.tsx',
+        minifier: './src/scripts/react/pages/main/minifier/page.tsx',
+        url_info: './src/scripts/react/pages/main/url-info/page.tsx',
     },
     output: {
         path: path.resolve(__dirname, distFolder),
