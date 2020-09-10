@@ -80,7 +80,7 @@ export class Form extends React.Component<Props, State>{
               min={curDate}
               className="form-control"
               id="date"
-              {...(this.state.isMinified
+              {...(this.state.minCode > -1
                 ?{disabled:true}
                 :{}
               )}
