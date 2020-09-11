@@ -20,7 +20,7 @@ class InfoBar extends React.Component<Props, State>{
       url: ''
     };
     if(props.urlInfo){
-        state.info = urlInfo.url;
+        state.url = urlInfo.url;
         state.info = urlInfo;
     }
 
@@ -32,7 +32,9 @@ class InfoBar extends React.Component<Props, State>{
 
     new UrlServer()
       .getUrlInfo(this.state.url)
-      .then(info => this.setState({info}))
+      .then(info => {
+        this.setState({info});
+      })
       .catch(() => {
         this.setState({info: 'Current url wasnt found. Minify it, please, to see info'});
       });
@@ -61,7 +63,10 @@ class InfoBar extends React.Component<Props, State>{
         typeof this.state.info == 'string'
         ? this.state.info
         : JSON.stringify(this.state.info)
-      }</code></pre>
+      }</code></pre><br/>
+      {this.state.info && +this.state.info.minCode > -1 && <p>
+        You can copy redirect url: back/url/{this.state.info.minCode}
+      </p>}
     </>)
   }
 }

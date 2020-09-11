@@ -22,6 +22,9 @@ class Controller{
 			);
 
 			$this->db = $db;
+
+      $urlMap = new \model\UrlMapModel($db);
+      $urlMap->cleanOldRecords();
 		}catch(Exception $e){
       $error_code = ''.md5($e).rand();
 

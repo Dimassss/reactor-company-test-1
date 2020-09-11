@@ -106,7 +106,7 @@ export class Form extends React.Component<Props, State>{
         <p>
            This page have alredy been minified.
            You can see info about
-           <a href={"/min/" + this.state.minCode}>
+           <a href={"/info/" + this.state.minCode}>
             this page
            </a>
         </p>

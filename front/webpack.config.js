@@ -72,5 +72,8 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
+    externals: {
+        moment: 'moment'
+    },
     watch: true
 }

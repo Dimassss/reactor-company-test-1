@@ -34,6 +34,13 @@ class UrlMapModel extends \Model{
 		if($this->id == null) return null;
 		return $this->cast();
 	}
+
+	public function cleanOldRecords(){
+		$this->db->begin();
+		$this->db->exec('DELETE FROM url_info WHERE url_info.minCode IN (SELECT url_map.id FROM url_map WHERE url_map.date < NOW())');
+		$this->db->exec('DELETE FROM url_map WHERE url_map.date < NOW()');
+		$this->db->commit();
+	}
 }
 
 ?>
